@@ -1,0 +1,33 @@
+{
+  "products": {
+    "A1": {
+      "description": "Product A1",
+      "tags": [
+        "web",
+        ".net"
+      ],
+      "forSale": true
+    },
+    "A2": {
+      "description": "Product A2",
+      "forSale": false
+    },
+    "A3": {
+      "description": "Product A2",
+      "releases": [
+        {
+          "date": "2019-02-08",
+          "name": "2019.2"
+        },
+        {
+          "date": "2019-06-13",
+          "name": "2019.3"
+        },
+        {
+          "date": "2020-01-14",
+          "name": "2020.1"
+        }
+      ]
+    }
+  }
+}
