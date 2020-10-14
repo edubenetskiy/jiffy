@@ -1,0 +1,32 @@
+= Jiffy
+
+:standard-readme-badge: https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square
+
+image::{standard-readme-badge}[standard-readme compliant,link=https://github.com/RichardLitt/standard-readme]
+
+A query tool for JSON files.
+
+== Background
+
+This project is an implementation of link:ASSIGNMENT.ru.adoc[a test assigment]
+from https://www.jetbrains.com/[JetBrains].
+
+== Install
+
+[source,shell script]
+----
+mvn clean verify
+----
+
+== Usage
+
+This section is empty. You can help by adding to it.
+
+== Contributing
+
+You can https://github.com/edubenetskiy/jiffy/issues[open an issue]
+or submit pull requests.
+
+== License
+
+link:LICENSE.txt[MIT © Egor Dubenetskiy]
