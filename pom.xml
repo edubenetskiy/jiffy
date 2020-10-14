@@ -14,5 +14,6 @@
 
     <modules>
         <module>parent-pom</module>
+        <module>api</module>
     </modules>
 </project>
