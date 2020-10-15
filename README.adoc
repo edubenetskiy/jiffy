@@ -3,8 +3,8 @@
 :standard-readme-badge: https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square
 :github-build-badge: https://github.com/edubenetskiy/jiffy/workflows/Java%20CI%20with%20Maven/badge.svg
 
-image::{standard-readme-badge}[standard-readme compliant,link=https://github.com/RichardLitt/standard-readme]
-image::{github-build-badge}[Java CI with Maven,link=https://github.com/edubenetskiy/jiffy/actions?query=workflow%3A%22Java+CI+with+Maven%22]
+image:{standard-readme-badge}[standard-readme compliant,link=https://github.com/RichardLitt/standard-readme]
+image:{github-build-badge}[Java CI with Maven,link=https://github.com/edubenetskiy/jiffy/actions?query=workflow%3A%22Java+CI+with+Maven%22]
 
 A query tool for JSON files.
 
