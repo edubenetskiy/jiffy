@@ -49,6 +49,7 @@
     </dependencies>
 
     <build>
+        <finalName>jiffy-web-ui</finalName>
         <plugins>
             <plugin>
                 <groupId>io.quarkus</groupId>
