@@ -18,6 +18,11 @@
     </context-param>
 
     <context-param>
+        <param-name>org.apache.myfaces.RESOURCE_BUNDLE_CONTROL</param-name>
+        <param-value>${myfaces.resource-bundle-control}</param-value>
+    </context-param>
+
+    <context-param>
         <param-name>primefaces.THEME</param-name>
         <param-value>luna-green</param-value>
     </context-param>
