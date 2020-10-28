@@ -10,6 +10,13 @@ This application is built with the https://quarkus.io[Quarkus framework], an imp
 For reading huge JSON files, the software uses a streaming parser from the https://github.com/FasterXML/jackson[Jackson] project and the https://github.com/jsurfer/JsonSurfer[JsonSurfer] query engine.
 It helps to work with arbitrarily-sized JSON documents without loading a whole file to memory.
 
+== Modules
+
+* `core` -- API and implementation of the JSON query engine.
+* `rest-api` -- a REST API for performing operations with documents and queries.
+* `rest-endpoints` -- endpoints that implement the above REST API.
+* `configuration` -- main executable JAR; the glue which keeps it all together.
+
 == Build
 
 ----
