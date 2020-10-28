@@ -13,6 +13,11 @@ A query tool for JSON files.
 This project is an implementation of link:ASSIGNMENT.ru.adoc[a test assigment]
 from https://www.jetbrains.com/[JetBrains].
 
+=== Project name
+
+A **jiffy** is a brief amount of time, or an instant.
+In this project, Jiffy is a metaphor of the query execution speed.
+
 == Install
 
 [source,shell script]
