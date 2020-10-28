@@ -2,6 +2,9 @@
 
 A web-based user interface (UI) for the https://github.com/edubenetskiy/jiffy/tree/master/web-service[Jiffy Web Service], a tool for making queries to arbitrarily-sized JSON files.
 
+The UI is available in two languages: Russian and English.
+Choose a language in your browser’s settings to see the translated UI.
+
 == Technology
 
 This application is built with the https://quarkus.io[Quarkus framework], an implementation of the https://microprofile.io/[MicroProfile] specification for Java.
