@@ -5,16 +5,52 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>space.banka.jiffy</groupId>
-    <artifactId>jiffy-all</artifactId>
+    <artifactId>jiffy</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>Jiffy :: Aggregator</name>
+    <name>Jiffy</name>
     <description>Jiffy is a query tool for arbitrarily-sized JSON files.</description>
 
     <modules>
-        <module>parent-pom</module>
-        <module>api</module>
-        <module>web-client</module>
+        <module>documentation</module>
+        <module>web-application</module>
+        <module>web-service</module>
     </modules>
+
+    <properties>
+        <java.version>11</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.outputEncoding>UTF-8</project.build.outputEncoding>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.16</version>
+                <scope>compile</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.1</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <release>${java.version}</release>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 </project>
