@@ -18,7 +18,7 @@
         </header>
         <h:form styleClass="needs-validation" novalidate="">
             <div class="row">
-                <div class="col-md">
+                <div class="col-md mb-4">
                     <h:outputLabel value="#{messages['queryForm.document.label']}" for="document"/>
                     <h:selectOneListbox id="document" value="#{queryBackingBean.selectedDocumentName}"
                                         required="true" requiredMessage="#{messages['queryForm.document.notSelected']}"
@@ -30,7 +30,7 @@
                                        itemValue="#{document.name}"/>
                     </h:selectOneListbox>
                 </div>
-                <div class="col-md">
+                <div class="col-md mb-4">
                     <h:outputLabel for="query">#{messages['queryForm.query.label']}</h:outputLabel>
                     <h:inputTextarea id="query" value="#{queryBackingBean.queryExpression}"
                                      placeholder="Heheh"
@@ -38,7 +38,6 @@
                                      cols="80" rows="5" styleClass="form-control"/>
                 </div>
             </div>
-            <hr class="mb-4"/>
             <h:commandButton action="#{queryBackingBean.executeQuery}"
                              type="submit"
                              value="#{messages['queryForm.execute.action']}"
