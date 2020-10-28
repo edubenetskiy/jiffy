@@ -1,0 +1,52 @@
+= Jiffy Web Service
+
+This web application provides a REST API for making queries to JSON files in a form of https://goessner.net/articles/JsonPath/[JsonPath] expressions.
+It works well with huge (several-gigabytes) files that may exceed the available amount of provided RAM.
+
+== Technology
+
+This application is built with the https://quarkus.io[Quarkus framework], an implementation of the https://microprofile.io/[MicroProfile] specification for Java.
+
+For reading huge JSON files, the software uses a streaming parser from the https://github.com/FasterXML/jackson[Jackson] project and the https://github.com/jsurfer/JsonSurfer[JsonSurfer] query engine.
+It helps to work with arbitrarily-sized JSON documents without loading a whole file to memory.
+
+== Build
+
+----
+mvn clean verify
+----
+
+== Run
+
+To run the application, you need to specify these two system properties:
+
+* `jiffy.documents.baseDirectory` -- a directory with source JSON files.
+* `jiffy.answers.baseDirectory` -- a directory which will
+
+Before application startup, ensure that both directories exist and are writeable.
+
+=== Run in Development mode with Live Coding
+
+----
+cd configuration/
+mvn compile quarkus:dev -Ddebug=5006 -Dquarkus.http.port=8081 \
+    -Djiffy.documents.baseDirectory=<source directory with JSON files> \
+    -Djiffy.answers.baseDirectory=<target directory for answers>
+----
+
+=== Run in Production mode
+
+----
+java -Djiffy.documents.baseDirectory=<source directory with JSON files> \
+     -Djiffy.answers.baseDirectory=<target directory for answers> \
+     -jar configuration/target/jiffy-runner.jar \
+----
+
+== Usage
+
+Make queries to JSON files using the REST API.
+
+Find OpenAPI schema at http://localhost:8081/openapi.
+
+When running in Development mode, see Swagger UI:
+http://localhost:8081/swagger-ui.
