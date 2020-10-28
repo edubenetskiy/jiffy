@@ -22,7 +22,12 @@ mvn clean verify
 
 == Usage
 
-This section is empty. You can help by adding to it.
+This project contains two main modules:
+
+* a back end (`web-service`), and
+* a front end (`web-application`).
+
+Please refer to README files in corresponding directories for more details.
 
 == Contributing
 
