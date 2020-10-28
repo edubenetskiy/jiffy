@@ -13,7 +13,6 @@
     <description>Jiffy is a query tool for arbitrarily-sized JSON files.</description>
 
     <modules>
-        <module>documentation</module>
         <module>web-application</module>
         <module>web-service</module>
     </modules>
