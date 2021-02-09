@@ -35,7 +35,9 @@
                     <h:inputTextarea id="query" value="#{queryBackingBean.queryExpression}"
                                      placeholder="Heheh"
                                      required="true" requiredMessage="#{messages['queryForm.query.required']}"
-                                     cols="80" rows="5" styleClass="form-control"/>
+                                     cols="80" rows="5" styleClass="form-control">
+                        <f:validator binding="#{jsonPathValidator}"/>
+                    </h:inputTextarea>
                 </div>
             </div>
             <h:commandButton action="#{queryBackingBean.executeQuery}"

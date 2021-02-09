@@ -17,6 +17,13 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.github.jsurfer</groupId>
+            <artifactId>jsurfer-core</artifactId>
+            <version>1.6.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
             <groupId>space.banka.jiffy</groupId>
             <artifactId>jiffy-web-application-rest-client</artifactId>
             <version>1.0.0-SNAPSHOT</version>
