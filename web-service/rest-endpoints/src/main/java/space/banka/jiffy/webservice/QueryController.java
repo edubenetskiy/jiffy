@@ -1,5 +1,6 @@
 package space.banka.jiffy.webservice;
 
+import lombok.extern.slf4j.Slf4j;
 import space.banka.jiffy.api.*;
 import space.banka.jiffy.api.exceptions.DocumentNotFoundException;
 import space.banka.jiffy.api.exceptions.InvalidQueryException;
@@ -17,6 +18,7 @@ import java.net.URI;
 
 @Path("queries")
 @RequestScoped
+@Slf4j
 public class QueryController implements QueryService {
 
     @Inject
@@ -37,6 +39,7 @@ public class QueryController implements QueryService {
             URI answerUri = uriInfo.getBaseUriBuilder().path("answers").path(answer.getID()).build();
             return Response.created(answerUri).build();
         } catch (DocumentNotFoundException | InvalidQueryException exception) {
+            log.error("Failed to execute query", exception);
             return Response.status(Response.Status.BAD_REQUEST)
                     .type(MediaType.TEXT_PLAIN_TYPE)
                     .entity(exception.getMessage())
