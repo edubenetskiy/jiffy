@@ -8,10 +8,14 @@ import space.banka.jiffy.restclient.DocumentServiceClient;
 import space.banka.jiffy.restclient.QueryServiceClient;
 import space.banka.jiffy.webapi.dto.Document;
 import space.banka.jiffy.webapi.dto.QueryRequest;
+import space.banka.jiffy.webapp.i18n.Messages;
 
 import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
 import java.time.Duration;
@@ -21,6 +25,9 @@ import java.time.Instant;
 @RequestScoped
 @Slf4j
 public class QueryBackingBean {
+
+    @Inject
+    Messages messages;
 
     @Inject
     @RestClient
@@ -52,12 +59,18 @@ public class QueryBackingBean {
                 .documentTitle(selectedDocumentName)
                 .queryExpression(queryExpression)
                 .build();
-        Response response = queryClient.executeQuery(queryRequest);
-        if (response.getStatusInfo().toEnum() == Response.Status.CREATED) {
-            answerUrl = response.getHeaderString(HttpHeaders.LOCATION);
+        try {
+            Response response = queryClient.executeQuery(queryRequest);
+            if (response.getStatusInfo().toEnum() == Response.Status.CREATED) {
+                answerUrl = response.getHeaderString(HttpHeaders.LOCATION);
+            }
+            Instant endTime = Instant.now();
+            log.info("A query took " + Duration.between(startTime, endTime).toMillis() + " milliseconds");
+        } catch (WebApplicationException exception) {
+            FacesContext.getCurrentInstance().addMessage(null,
+                    new FacesMessage(FacesMessage.SEVERITY_ERROR, messages.get("messages.unexpectedErrorPleaseRetryAndReport"), null));
+            log.error("Failed to perform a query", exception);
         }
-        Instant endTime = Instant.now();
-        log.info("A query took " + Duration.between(startTime, endTime).toMillis() + " milliseconds");
         return "index";
     }
 }
