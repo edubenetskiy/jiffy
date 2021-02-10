@@ -15,9 +15,17 @@
             <h1>#{messages['messages.errorOccured']}</h1>
         </header>
         <p>#{messages['messages.unexpectedErrorPleaseRetryAndReport']}</p>
-        <h:link value="#{messages['errorPage.goToMainScreen.action']}"
-                styleClass="btn btn-primary"
-                outcome="/index.xhtml"/>
+        <p>
+            <h:link value="#{messages['errorPage.goToMainScreen.action']}"
+                    styleClass="btn btn-primary"
+                    outcome="/index.xhtml"/>
+            <span> </span>
+            <a href="https://github.com/edubenetskiy/jiffy/issues/new"
+               target="_blank"
+               class="btn btn-link">
+                #{messages['footer.reportProblem.action']}
+            </a>
+        </p>
     </h:body>
 </f:view>
 </HTML>
