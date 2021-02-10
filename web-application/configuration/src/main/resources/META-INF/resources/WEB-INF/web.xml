@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file is read by Primefaces. -->
+<web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+
+    <!-- Error pages -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/META-INF/resources/errors/not-found.xhtml</location>
+    </error-page>
+    <error-page>
+        <exception-type>javax.faces.application.ViewExpiredException</exception-type>
+        <location>/META-INF/resources/errors/session-expired.xhtml</location>
+    </error-page>
+    <error-page>
+        <location>/META-INF/resources/errors/general.xhtml</location>
+    </error-page>
+</web-app>
