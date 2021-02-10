@@ -47,8 +47,13 @@
         </h:form>
         <section class="mt-4" jsf:rendered="#{not empty queryBackingBean.answerUrl}">
             <h2>#{messages['answerPanel.answer.label']}</h2>
-            <a href="#{queryBackingBean.answerUrl}">#{messages['answerPanel.actions.download']}</a>
-            <code>#{queryBackingBean.answerUrl}</code>
+            <a class="btn btn-primary btn-lg align-baseline"
+               href="#{queryBackingBean.answerUrl}">
+                #{messages['answerPanel.actions.download']}
+            </a>
+            <a href="#{queryBackingBean.answerUrl}" class="mx-2">
+                <code>#{queryBackingBean.answerUrl}</code>
+            </a>
         </section>
         <section class="mt-4" jsf:rendered="#{not empty facesContext.messageList}">
             <h2>#{messages['errorList.label']}</h2>
